@@ -1,0 +1,24 @@
+{% assign img_key = include.path | remove_first: "/assets/images/" | remove_first: "assets/images/" %}
+{% assign img = site.data.responsive_images[img_key] %}
+
+{% if img %}
+<img
+  src="{{ img.src }}"
+  srcset="{{ img.srcset | join: ', ' }}"
+  sizes="{{ include.sizes | default: '(max-width: 600px) 100vw, (max-width: 1000px) 80vw, 1200px' }}"
+  loading="{{ include.loading | default: 'lazy' }}"
+  alt="{{ include.alt | default: '' }}"
+  {% if include.width %}width="{{ include.width }}"{% elsif img.width %}width="{{ img.width }}"{% endif %}
+  {% if include.height %}height="{{ include.height }}"{% elsif img.height %}height="{{ img.height }}"{% endif %}
+  {% if include.class %}class="{{ include.class }}"{% endif %}
+  {% if include.style %}style="{{ include.style }}"{% endif %}>
+{% else %}
+<img
+  src="/{{ include.path | remove_first: '/' }}"
+  alt="{{ include.alt | default: '' }}"
+  loading="{{ include.loading | default: 'lazy' }}"
+  {% if include.width %}width="{{ include.width }}"{% endif %}
+  {% if include.height %}height="{{ include.height }}"{% endif %}
+  {% if include.class %}class="{{ include.class }}"{% endif %}
+  {% if include.style %}style="{{ include.style }}"{% endif %}>
+{% endif %}

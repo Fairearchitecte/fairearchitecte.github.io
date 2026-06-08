@@ -1,0 +1,158 @@
+---
+layout: base
+---
+<!-- Main Content -->
+<div id="main-content">
+    <!-- Hero Section -->
+    <div id="hero">
+        <div id="hero-styles">
+            <div id="hero-caption" class="content-full-width parallax-scroll-caption text-align-center hero-full-caption">
+                <div class="inner">
+                    <h1 class="hero-title caption-timeline generate-spans" data-infoTextBefore=""
+                        data-infoTextAfter="">
+                        <div class="blue-color"><span>Portfolio</span></div>
+                    </h1>
+                </div>
+            </div>
+            <div id="hero-footer" class="has-border">
+                <div class="hero-footer-left">
+                    <div class="button-wrap left scroll-down">
+                        <div class="icon-wrap parallax-wrap">
+                            <div class="button-icon parallax-element">
+                                <!--<i class="fa-solid fa-arrow-down"></i>-->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="margin:10px;"><path d="M297.4 566.6C309.9 579.1 330.2 579.1 342.7 566.6L502.7 406.6C515.2 394.1 515.2 373.8 502.7 361.3C490.2 348.8 469.9 348.8 457.4 361.3L352 466.7L352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 466.7L182.6 361.3C170.1 348.8 149.8 348.8 137.3 361.3C124.8 373.8 124.8 394.1 137.3 406.6L297.3 566.6z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-footer-right">
+                    <div class="button-wrap right show-filters">
+                        <div class="icon-wrap parallax-wrap">
+                            <div class="button-icon parallax-element">
+                                <!-- icône "trier" — visible par défaut -->
+                                <svg class="icon-sort" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"
+                                    style="width:1em; height:1em; fill:currentColor;">
+                                    <path d="M130.4 268.2C135.4 280.2 147 288 160 288L480 288C492.9 288 504.6 280.2 509.6 268.2C514.6 256.2 511.8 242.5 502.7 233.3L342.7 73.3C330.2 60.8 309.9 60.8 297.4 73.3L137.4 233.3C128.2 242.5 125.5 256.2 130.5 268.2zM130.4 371.7C125.4 383.7 128.2 397.4 137.3 406.6L297.3 566.6C309.8 579.1 330.1 579.1 342.6 566.6L502.6 406.6C511.8 397.4 514.5 383.7 509.5 371.7C504.5 359.7 492.9 352 480 352L160 352C147.1 352 135.4 359.8 130.4 371.8z"/>
+                                </svg>
+                                <!-- icône "fermer" — masquée par défaut, affichée quand les filtres sont ouverts -->
+                                <svg class="icon-xmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true"
+                                    style="width:0.85em; height:0.85em; fill:currentColor; display:none;">
+                                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="button-text sticky right"><span data-close="Voir les catégories" data-hover="Voir les catégories">Voir les catégories</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Hero Section -->
+    <!-- Main Page Content -->
+    <div id="main-page-content">
+        <!-- Fit Thumb Screen Effects -->
+        <div id="itemsWrapperLinks">
+            <div id="itemsWrapper" class="webgl-fitthumbs fx-one">
+                <div id="filters-gradient">
+                    <ul id="filters" class="filters-options-wrapper">
+                        <li class="filters-timeline link">
+                            <a id="all" class="filter-option is_active" href="#" data-filter="">
+                                <span>Tous les projets</span>
+                            </a>
+                        </li>
+                        {% for sitecategory in site.categories %}
+                        {% assign category_slug = sitecategory | first | slugify: 'latin' %}
+                        {% assign category_label = sitecategory | first %}
+                          <li class="filters-timeline link">
+                            <a class="filter-option2"
+                                href="/portfolio/{{ category_slug }}">{{ category_label }}, </a>
+                          </li>
+                          
+                        {% endfor %}
+                    </ul>
+                </div>
+                {%- if site.posts.size > 0 -%}
+                <!-- ClaPat Portfolio -->
+                <div class="showcase-portfolio expand-grid">
+                    {%- assign date_format = site.minima.date_format | default: "%Y" -%}
+                    {% assign page_categories = page.categories | first %}
+                    {%- for post in site.posts -%}
+                        {% assign url = post.url %}
+                        {% assign title = post.title %}
+                        {% assign thumbnailback = post.thumbnailback %}
+                        {% assign thumbnailbackalt = post.thumbnailback-alt %}
+                        {% assign thumbnailfront = post.thumbnailfront %}
+                        {% assign thumbnailfrontalt = post.thumbnailfront-alt %}
+                        <div class="clapat-item photo-filter">
+                            <div class="slide-inner trigger-item" data-centerline="OPEN">                                                    
+                                <div class="img-mask pixels-cover-disabled">
+                                    <a class="slide-link" href="{{ url | relative_url }}" aria-label="{{ thumbnailfront-alt | default: title }}"></a>
+                                    <div class="section-image trigger-item-link">
+                                        {% include img.html
+                                            path=thumbnailback
+                                            alt=thumbnailbackalt
+                                            class="item-image grid__item-img"
+                                            style=""
+                                            sizes="(max-width: 767px) 100vw, 50vw"
+                                            loading="lazy" %}
+                                    </div>
+                                    {% include img.html
+                                        path=thumbnailback
+                                        alt=thumbnailbackalt
+                                        class="grid__item-img grid__item-img--large"
+                                        style=""
+                                        sizes="(max-width: 767px) 100vw, 50vw"
+                                        loading="lazy" %}
+                                    <div class="section-thumb">
+                                        {% include img.html
+                                            path=thumbnailfront
+                                            alt=thumbnailfrontalt
+                                            class=""
+                                            style=""
+                                            sizes="(max-width: 767px) 40vw, 20vw"
+                                            loading="lazy" %}
+                                    </div>                              
+                                </div>
+                                <div class="slide-caption trigger-item-link-secondary">
+                                    <div class="slide-title secondary-font">
+                                        <span>{{ post.title | escape }}</span>
+                                    </div>                                                    
+                                    <div class="slide-date">
+                                        <span>{{ post.date | date: date_format }}</span>
+                                    </div>
+                                    <div class="slide-cat secondary-font">
+                                        <span >{{ post.categories }}</span>
+                                    </div>                                             
+                                </div>
+                            </div>
+                        </div>
+                    {%- endfor -%}
+                </div>
+                {%- endif -%}
+                <!-- ClaPat Portfolio -->
+            </div>                                                           
+        </div>    
+        <!-- Fit Thumb Screen Effects -->
+    </div>
+    <!--/Main Page Content -->
+    <!-- Page Navigation --> 
+    <div id="page-nav" class="move-nav-onload">
+        <div class="page-nav-wrap">
+            <div class="page-nav-caption nav-full-caption content-full-width text-align-center">                                 
+                <div class="inner">
+                    <a class="next-ajax-link-page" data-centerline="GO TO" href="/contact">
+                        <div class="next-hero-title caption-timeline red-color red-color-hover " data-infoTextBefore="Page suivante" data-infoTextAfter="Cliquez pour me parler de votre projet via mon formulaire de contact" >
+                            Contact
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"
+                                style="width: 0.85em; height: 0.85em; fill: currentColor;">
+                                <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                            </svg>
+                        </div>
+                    </a>                                   
+                </div>               
+            </div>
+        </div>
+    </div>      
+    <!--/Page Navigation -->
+</div>
+<!--/Main Content -->

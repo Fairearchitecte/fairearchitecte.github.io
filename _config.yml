@@ -1,0 +1,98 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: FAIRE Architecte
+email: contact@faire-architecte.com
+description: >- # this means to ignore newlines until "baseurl:"
+  FAIRE Architecte, FAbrique d'Intentions REvées, est un atelier d'architecture HMONP à Reims. Nous accompagnons nos clients dans la réalisation de leurs projets de construction neuve, d'extension, de rénovation, de mobilier sur mesure et de projets ERP.
+baseurl: "" # the subpath of your site, e.g. /blog
+domain: "faire-architecte.com"
+url: "https://faire-architecte.com" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/assets/images/FAIRE_LOGO_01-26_MAJ_mot_plain.svg"
+author:
+  name: "Floriane Jean"
+social:
+  name: "FAIRE Architecte"
+  links:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/floriane-jean-8289a667/"
+    - name: "Instagram"
+      url: "https://www.instagram.com/faire_architecte/"
+    - name: "Facebook"
+      url: "https://www.facebook.com/profile.php?id=61580655621227"
+    - name: "Email"
+      url: "mailto:contact@faire-architecte.com"
+google_site_verification: "7OLBu3eePUp2A3KiSB6yEOQF8t2bS1bZxbNT0LOsk6U"
+# Remplacer par votre ID Google Analytics (ex: G-XXXXXXXXXX)
+google_analytics: "G-N8R9314KRH"
+locales: "fr-FR"
+lang: "fr-FR"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-minifier
+  - jekyll-sitemap
+
+jekyll-minifier:
+  compress_css: true
+  compress_javascript: false
+  minify_css_content: true
+
+show_excerpts: true
+
+sass:
+  quiet_deps: true
+
+#   Specific pages for site navigation.
+#     If you wish to link only specific pages in the site-navigation, use this
+#     and list the `path` property (as represented via Liquid) of the pages in
+#     the order they should be rendered.
+nav_pages:
+  - index.markdown
+  - portfolio.md
+  - a-propos.md
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - scripts/
+  - package.json
+  - package-lock.json
+
+permalink: /portfolio/:categories/:slug

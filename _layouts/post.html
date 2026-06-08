@@ -1,0 +1,119 @@
+---
+layout: base
+---
+
+<!-- Hero Section -->
+<div id="hero" class="has-image autoscroll">
+    <div id="hero-styles">
+        <div id="hero-caption" class="content-full-width parallax-scroll-caption">
+
+            <div class="inner">
+                <h1 class="hero-title caption-timeline blue-color"><span>{{ page.title }}</span></h1>
+                <div class="hero-subtitle caption-timeline onload-shuffle">
+                </div>
+            </div>
+
+            <div id="hero-footer" class="">
+                <div class="hero-footer-left">
+                    <div class="button-wrap left scroll-down">
+                        <div class="icon-wrap parallax-wrap">
+                            <div class="button-icon parallax-element">
+                                <!--<i class="fa-solid fa-arrow-down"></i>-->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="margin:10px;"><path d="M297.4 566.6C309.9 579.1 330.2 579.1 342.7 566.6L502.7 406.6C515.2 394.1 515.2 373.8 502.7 361.3C490.2 348.8 469.9 348.8 457.4 361.3L352 466.7L352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 466.7L182.6 361.3C170.1 348.8 149.8 348.8 137.3 361.3C124.8 373.8 124.8 394.1 137.3 406.6L297.3 566.6z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-footer-right">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="hero-image-wrapper" class="change-header-color hero-pixels-cover-disabled parallax-scroll-image">
+    <div id="hero-background-layer" class="parallax-scroll-image">
+        {% assign _bg_key = page.thumbnailback | remove_first: "/assets/images/" | remove_first: "assets/images/" %}
+        {% assign _bg_img = site.data.responsive_images[_bg_key] %}
+        {% if _bg_img %}{% assign _bg_url = _bg_img.srcset | last | split: " " | first %}{% else %}{% assign _bg_url = page.thumbnailback %}{% endif %}
+        <div id="hero-bg-image" class="hero-bg-image" style="background-image:url('{{ _bg_url }}')">
+            <div class="hero-details">
+                <div>
+                    <h2>Détails du projet</h2>
+                    <p>
+                        <span>{{ page.detail1a }}</span>
+                        {% if page.detail1a != ""  %} // {% endif %}
+                        <span>{{ page.detail1b }}</span>
+                    </p>
+                    <p>
+                        <span>{{ page.detail2a }}</span>
+                        {% if page.detail2a != ""  %} // {% endif %}
+                        <span>{{ page.detail2b }}</span>
+                    </p>
+                    <p>
+                        <span>{{ page.detail3a }}</span>
+                        {% if page.detail3a != ""  %} // {% endif %}
+                        <span>{{ page.detail3b }}</span>
+                    </p>
+                    <p>
+                        <span>{{ page.detail4a }}</span>
+                        {% if page.detail4a != ""  %} // {% endif %}
+                        <span>{{ page.detail4b }}</span>
+                    </p>
+                    <p>
+                        <span>{{ page.detail5a }}</span>
+                        {% if page.detail5a != ""  %} // {% endif %}
+                        <span>{{ page.detail5b }}</span>
+                    </p>
+                    <p>
+                        <span>{{ page.detail6a }}</span>
+                        {% if page.detail6a != ""  %} // {% endif %}
+                        <span>{{ page.detail6b }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Hero Section -->
+<!-- Main Content -->
+<div id="main-content">
+    {{ content }}
+
+    <!-- Page Navigation --> 
+    <div id="page-nav" class="move-nav-onloadx">
+        <div class="page-nav-wrap">
+            <div class="page-nav-caption nav-full-caption content-full-width text-align-center">                                 
+                <div class="inner">
+                    <div class="post-nav">
+                        <div class="post-nav-next">
+                            {% if page.next.url %}
+                            <a class="next-ajax-link-page" href="{{page.next.url}}">
+                                <div class="next-hero-title caption-timeline blue-color blue-color-hover" data-infoTextBefore="Projet Suivant" data-infoTextAfter="Cliquer pour voir le projet suivant">
+                                    {{page.next.title}}
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"
+                                        style="width: 0.85em; height: 0.85em; fill: currentColor;">
+                                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                                    </svg>
+                                </div>
+                            </a>
+                            {% else %}
+                            <a class="next-ajax-link-page" href="{{ site.posts.last.url }}">
+                                <div class="next-hero-title caption-timeline blue-color blue-color-hover" data-infoTextBefore="Projet Suivant" data-infoTextAfter="Cliquer pour voir le projet suivant">
+                                    {{ site.posts.last.title }}
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"
+                                        style="width: 0.85em; height: 0.85em; fill: currentColor;">
+                                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                                    </svg>
+                                </div>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>                     
+                </div>               
+            </div>
+        </div>
+    </div>      
+    <!--/Page Navigation -->
+</div>
+<!--/Main Content -->
