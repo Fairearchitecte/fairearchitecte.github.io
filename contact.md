@@ -55,7 +55,7 @@ breadcrumbs:
                     <!-- modify this form HTML and place wherever you want your form -->
                     <form id="my-form" action="https://formspree.io/f/xdawryge" method="POST" autocomplete="on" style="max-width: 800px; margin-right: auto; margin-left: auto;">
                         <label>Nom*:</label>
-                        <input type="text" name="username" id="username" autocomplete="name" placeholder="Votre nom" required>
+                        <input type="text" name="name" id="username" autocomplete="name" placeholder="Votre nom" required>
                         <label>Email*:</label>
                         <input type="email" name="email" id="email" autocomplete="email" placeholder="votre@email.com" required />
                         <label>Téléphone*:</label>
