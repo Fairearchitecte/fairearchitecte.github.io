@@ -121,7 +121,7 @@ breadcrumbs:
                 </div>
                 <!--/Row -->
                 <!-- Row -->
-                <div id="processus" class="content-row row_padding_top text-align-center light-section home-steps" data-bgcolor="#f6dace">
+                <div id="processus" class="content-row row_padding_top text-align-center light-section2 home-steps" data-bgcolor="#f6dace">
                     <p class="bigger has-shuffle-disabled secondary-font">POURQUOI TRAVAILLER ENSEMBLE ?</p>
                     <h2 class="has-animation">Les étapes de mon processus<br class="mobile-only"> <span class="word-architectural">architectural</span></h2>
                     <hr>
