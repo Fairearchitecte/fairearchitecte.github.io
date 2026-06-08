@@ -52,6 +52,13 @@
   formbutton("create", {
     action: "https://formspree.io/f/xdawryge",
     title: "Parlez-moi de votre projet",
+    onResponse: function(ok, setStatus) {
+      if (ok) {
+        setStatus("Merci ! Votre message a bien été envoyé, je reviens vers vous rapidement.");
+      } else {
+        setStatus("Oups, une erreur est survenue. Merci de réessayer ou de me contacter directement par email.");
+      }
+    },
     fields: [
       {
         type: "text",

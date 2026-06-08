@@ -85,19 +85,19 @@ breadcrumbs:
                         }
                         }).then(response => {
                         if (response.ok) {
-                            status.innerHTML = "Merci pour votre message !";
+                            status.innerHTML = "Merci ! Votre message a bien été envoyé, je reviens vers vous rapidement.";
                             form.reset()
                         } else {
                             response.json().then(data => {
                             if (Object.hasOwn(data, 'errors')) {
                                 status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
                             } else {
-                                status.innerHTML = "Oups ! Un problème est survenu lors de l'envoi de votre message."
+                                status.innerHTML = "Oups, une erreur est survenue. Merci de réessayer ou de me contacter directement par email."
                             }
                             })
                         }
                         }).catch(error => {
-                        status.innerHTML = "Oups ! Un problème est survenu lors de l'envoi de votre message."
+                        status.innerHTML = "Oups, une erreur est survenue. Merci de réessayer ou de me contacter directement par email."
                         });
                     }
                     form.addEventListener("submit", handleSubmit)
