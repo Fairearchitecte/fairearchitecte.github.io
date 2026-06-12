@@ -55,7 +55,7 @@ captionimg5: ""
 
 img6: "/assets/images/projects/filtrer/02b.jpg"
 altimg6: "Cave de vieillissement après rénovation – projet Filtrer, Sacy, Marne, FAIRE Architecte"
-captionimg6: "Ouverture visuelle sur le petit caveau et la salle de stockage (après)"
+captionimg6: "Ouverture visuelle sur le petit caveau et le chais à fûts (après)"
 
 img7: "/assets/images/projects/filtrer/03a.jpg"
 altimg7: "Espace de la cave avant travaux – projet Filtrer, Sacy, Marne, FAIRE Architecte"
@@ -71,7 +71,7 @@ captionimg9: "Mise en lumière et ajout d’un mur ardoise (après)"
 
 img10: "/assets/images/projects/filtrer/05a.jpg"
 altimg10: "Allée de la cave avant rénovation – projet Filtrer, Sacy, Marne, FAIRE Architecte"
-captionimg10: "Salle de stockage brute et froide (avant)"
+captionimg10: "Le chais à fûts brut et froid (avant)"
 
 img11: ""
 altimg11: ""
@@ -82,15 +82,15 @@ altimg12: "Allée de la cave après rénovation – projet Filtrer, Sacy, Marne,
 captionimg12: "Mise en lumière et reprise du sol plus adapté à l’usage (après)"
 
 img13: "/assets/images/projects/filtrer/06a.jpg"
-altimg13: "Zone de stockage de la cave avant travaux – projet Filtrer, Sacy, Marne, FAIRE Architecte"
-captionimg13: "Salle de stockage brute et froide (avant)"
+altimg13: "Stockage et chais à fûts de la cave avant travaux – projet Filtrer, Sacy, Marne, FAIRE Architecte"
+captionimg13: "Chais à fûts brut et froid (avant)"
 
 img14: ""
 altimg14: ""
 captionimg14: ""
 
 img15: "/assets/images/projects/filtrer/06aps.jpg"
-altimg15: "Zone de stockage rénovée – projet Filtrer, Sacy, Marne, FAIRE Architecte"
+altimg15: "Chais à fûts rénové – projet Filtrer, Sacy, Marne, FAIRE Architecte"
 captionimg15: "Lumière de « visite » et lumière de « travail » (après)"
 
 img16: ""
