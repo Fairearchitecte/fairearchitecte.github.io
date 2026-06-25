@@ -38,3 +38,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem 'jekyll-minifier'
 gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
+gem 'base64'
+gem 'bigdecimal'
